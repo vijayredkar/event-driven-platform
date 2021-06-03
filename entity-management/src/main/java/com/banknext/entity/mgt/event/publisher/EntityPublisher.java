@@ -14,7 +14,7 @@ import com.banknext.txn.Entity;
 @Service
 public class EntityPublisher {
 	
-	@Value("${new-customer-created-topic}")
+	@Value("${new-entity-initiated-topic}")
 	String entityTxnTopic;
 	
 	@Autowired

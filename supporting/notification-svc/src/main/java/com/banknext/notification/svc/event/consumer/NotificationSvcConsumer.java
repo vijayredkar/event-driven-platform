@@ -15,10 +15,10 @@ public class NotificationSvcConsumer {
 		
 	Log LOGGER = LogFactory.getLog(NotificationSvcConsumer.class);
 	
-	@KafkaListener(topics = "${new-customer-created-topic}")
+	@KafkaListener(topics = "${new-account-created-topic}")
     public void listen(Entity entity)
     {        
-    	LOGGER.info("---- Message consumed - Customer created : "+ entity.getCustomer().toString());    	
+    	LOGGER.info("---- Message consumed - New Customer-Account created : "+ entity.getCustomer().toString());    	
     	processMessage(entity);
     }
 
@@ -30,6 +30,6 @@ public class NotificationSvcConsumer {
 	}
 
 	private void notify(Entity entity) {		
-		LOGGER.info("---- Notifed - Customer and Account ready for transaction " + entity.toString());		
+		LOGGER.info("---- Notified - Customer and Account ready for transaction " + entity.toString());		
 	}
 }

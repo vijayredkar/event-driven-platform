@@ -15,7 +15,7 @@ public class MonitoringSvcConsumer {
 		
 	Log LOGGER = LogFactory.getLog(MonitoringSvcConsumer.class);
 	
-	@KafkaListener(topics = "${new-customer-created-topic}")
+	@KafkaListener(topics = "${new-account-created-topic}")
     public void listen(Entity entity)
     {        
     	LOGGER.info("---- Message consumed - New Customer-Account created : "+ entity.toString());    	
